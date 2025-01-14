@@ -4,15 +4,12 @@
     {
 
         public int Id { get; set; }
-        public double Prix { get; set; }
 
-        public decimal Tva { get; set;}
+        public string Prenom { get; set; }
 
         public string Nom { get; set;}
 
-        public bool Status { get; set;}
-
-        public float Montant { get; set;}
+        public string Address { get; set; }
 
         
 

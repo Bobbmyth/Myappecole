@@ -2,5 +2,7 @@
 {
     public class Catalogue
     {
+        public int Id { get; set; }
+
     }
 }
