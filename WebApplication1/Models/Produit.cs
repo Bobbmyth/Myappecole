@@ -12,4 +12,3 @@
         public decimal Prix { get; set; }
     }
 }
-d

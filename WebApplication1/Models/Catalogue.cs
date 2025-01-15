@@ -1,8 +1,13 @@
-﻿namespace WebApplication1.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApplication1.Models
 {
     public class Catalogue
     {
-        public int Id { get; set; }
 
+        [Key]
+        public int numero { get; set; }
+        public string NomCategorie { get; set; }
+        public decimal Prix { get; set; }
     }
 }
