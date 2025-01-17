@@ -1,14 +1,39 @@
-﻿namespace WebApplication1.Models
+﻿// using System.ComponentModel.DataAnnotations;
+
+// namespace WebApplication1.Models
+// {
+//     public class Produit
+//     {
+
+//         public int Id { get; set; }
+
+//         [Required]
+//         [StringLength(100, MinimumLength =3 )] 
+//         public string Name { get; set; }
+
+//         [Required]
+//         [Range(0.01, 1000000)]
+//         public decimal Price { get; set; }
+//     }
+// }
+
+
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+
+namespace WebApplication1.Models
 {
-    public class Produit
-    {
+        public class Produit
+        {
 
-        public string Id { get; set; }
+            public int Id { get; set; }
 
-        public string NomProduit { get; set; }
-
-        public string Origine { get; set; }
-
-        public decimal Prix { get; set; }
+            [Display(Name = "Designation")]
+            [Required(ErrorMessage = "Merci de saisir le nom")]
+            [MinLength(2, ErrorMessage = "Au moins deux caractères")]
+            public string Name { get; set; }
+            [Display(Name = "Prix")]
+            [Required(ErrorMessage = "Merci de saisir le prix")]
+            public double Price { get; set; }
+        }
     }
-}

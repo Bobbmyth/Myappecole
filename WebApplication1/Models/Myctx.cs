@@ -13,7 +13,11 @@ namespace WebApplication1.Models
 
         public DbSet <Produit> Produits { get; set;}
 
-        public DbSet <Catalogue> Catalogues { get; set; }
+       
+        
+        //public DbSet <Catalogue> Catalogues { get; set; }
+
+       
 
 
 

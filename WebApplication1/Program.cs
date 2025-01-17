@@ -4,12 +4,20 @@ using WebApplication1.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
 builder.Services.AddControllersWithViews();
-
-
-
 builder.Services.AddDbContext<Myctx>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBconnect")));
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(50);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+
+});
 
 var app = builder.Build();
 
@@ -21,6 +29,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
