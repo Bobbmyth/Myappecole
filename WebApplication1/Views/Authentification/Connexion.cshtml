@@ -1,41 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Connexion";
 }
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire Connexion</title>
-</head>
-<body>
-    <h1>Connexion</h1>
 
-    <form action="" class="FormulaireClient" method="post">
+<h4>Connexion</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Connexion" method="post">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" required />
+            </div>
 
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" name="password" class="form-control" required />
+            </div>
 
-        <div>
-            <label for="">Nom</label>
-            <input type="text" name="" id="inputname"></br>
-        </div>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="text-danger">@ViewBag.ErrorMessage</div>
+            }
 
+            <div class="form-group">
+                <input type="submit" value="Se connecter" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
-        <div>
-            <label for="">Email</label>
-            <input type="email" name="" id="inputemail" placeholder=> </br>
-        </div>
-
-        <div>
-            <label for="">Password</label>
-            <input type="email" name="" id="inputPassword" placeholder=> </br>
-        </div>
-
-        
-
-
-    </form>
-    <button id="ButtonSendForm">Send</button>
-</body>
-</html>
+<div>
+    <a asp-action="Inscription">Pas encore inscrit ? Inscrivez-vous ici.</a>
+</div>

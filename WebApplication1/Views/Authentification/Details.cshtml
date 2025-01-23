@@ -1,0 +1,26 @@
+﻿@model WebApplication1.Models.Client
+
+@{
+    ViewData["Title"] = "Détails du Client";
+}
+
+<h1>Détails du Client</h1>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nom</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+
+        <dt class="col-sm-2">Prénom</dt>
+        <dd class="col-sm-10">@Model.Prenom</dd>
+
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+</div>
